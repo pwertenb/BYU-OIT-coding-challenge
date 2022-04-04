@@ -30,3 +30,5 @@ Other tests can be inserted into the tests and answers arrays if desired.
 <h2>Notes</h2>
 
 Some handwritten walkthroughs of code are included as a .jpg, but these are limited because I accidentally erased other notes as I was going.
+
+The coding aspect of this project took me 3 hours. Testing on Windows, adding documentation and notes, and other rearranging added about 30 minutes to the total time.
