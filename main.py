@@ -143,6 +143,10 @@ def test_decimal_to_roman():
 
 # main function
 def main():
+    if len(sys.argv) < 3:
+        print("Not enough arguments. Pass in a command and a value.")
+        return
+
     if sys.argv[1] == "rtod":
         print("Roman numeral", sys.argv[2], "to decimal:", roman_to_decimal(sys.argv[2]))
     elif sys.argv[1] == "dtor":
