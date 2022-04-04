@@ -14,3 +14,15 @@ To convert a Roman numeral to decimal, use the argument 'rtod' then pass the num
 To convert a decimal to Roman numeral, use the argument 'dtor' then pass the number to convert. 
 
     python3 main.py dtor 69
+
+The examples given in the code challenge PDF can be tested manually to check for correctness. To do so, uncomment the following functions:
+
+    if __name__ == "__main__":
+        #test_roman_to_decimal()
+        #test_decimal_to_roman()
+
+And comment out the main loop:
+
+        main()
+
+Other tests can be inserted into the tests and answers arrays if desired.

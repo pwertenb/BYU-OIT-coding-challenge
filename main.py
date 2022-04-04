@@ -1,5 +1,3 @@
-# main source file
-
 import sys
 
 # these two constants are used to throw different errors
@@ -20,7 +18,6 @@ class NumeralException(Exception):
     def __str__(self):
         return f'Error converting numeral {self.num}: {self.err}'
 
-
 # dictionary to give each letter its value
 letters = {
     "I": 1,
@@ -31,6 +28,7 @@ letters = {
     "D": 500,
     "M": 1000
 }
+
 
 # roman numerals to decimal
 def roman_to_decimal(num):
@@ -67,22 +65,6 @@ def roman_to_decimal(num):
 
     return result
 
-def test_roman_to_decimal():
-    # testing roman to decimal conversion
-    tests = ["III", "VII", "CLXV", "IV", "XL", "XC", "XIV", "XCIV", "MMMCMXCIX"]
-    answers = [3, 7, 165, 4, 40, 90, 14, 94, 3999]
-
-    # testing loop
-    try:
-        for i in range(len(tests)):
-            print("testing:", tests[i])
-            result = roman_to_decimal(tests[i])
-            if result == answers[i]:
-                print("     passed!")
-            else:
-                print("     expected:", answers[i], "got:", result)
-    except NumeralException as ex:
-        print(ex)
 
 # decimal to roman numerals
 def decimal_to_roman(num):
@@ -118,12 +100,34 @@ def decimal_to_roman(num):
 
     return result
 
-def test_decimal_to_roman():
+
+def test_roman_to_decimal():
     # testing roman to decimal conversion
+    tests = ["III", "VII", "CLXV", "IV", "XL", "XC", "XIV", "XCIV", "MMMCMXCIX"]
+    answers = [3, 7, 165, 4, 40, 90, 14, 94, 3999]
+
+    # testing loop
+    print("*** testing roman to decimal conversion ***")
+    try:
+        for i in range(len(tests)):
+            print("testing:", tests[i])
+            result = roman_to_decimal(tests[i])
+            if result == answers[i]:
+                print("     passed!")
+            else:
+                print("     expected:", answers[i], "got:", result)
+        print()
+    except NumeralException as ex:
+        print(ex)
+
+
+def test_decimal_to_roman():
+    # testing decimal to roman conversion
     tests = [3, 7, 165, 4, 40, 90, 14, 94, 3999]
     answers = ["III", "VII", "CLXV", "IV", "XL", "XC", "XIV", "XCIV", "MMMCMXCIX"]
 
     # testing loop
+    print("*** testing decimal to roman conversion ***")
     try:
         for i in range(len(tests)):
             print("testing:", tests[i])
@@ -132,15 +136,13 @@ def test_decimal_to_roman():
                 print("     passed!")
             else:
                 print("     expected:", answers[i], "got:", result)
+        print()
     except NumeralException as ex:
         print(ex)
 
 
 # main function
 def main():
-    #test_roman_to_decimal()
-    #test_decimal_to_roman()
-
     if sys.argv[1] == "rtod":
         print("Roman numeral", sys.argv[2], "to decimal:", roman_to_decimal(sys.argv[2]))
     elif sys.argv[1] == "dtor":
@@ -149,4 +151,6 @@ def main():
         print(sys.argv[1], "is an invalid command. Options are rtod (Roman numeral to decimal) or dtor (decimal to Roman numeral)")
 
 if __name__ == "__main__":
+    #test_roman_to_decimal()
+    #test_decimal_to_roman()
     main()
