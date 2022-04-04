@@ -26,3 +26,7 @@ And comment out the main loop:
         main()
 
 Other tests can be inserted into the tests and answers arrays if desired.
+
+<h2>Notes</h2>
+
+Some handwritten walkthroughs of code are included as a .jpg, but these are limited because I accidentally erased other notes as I was going.
